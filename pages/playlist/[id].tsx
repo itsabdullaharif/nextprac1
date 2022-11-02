@@ -22,7 +22,7 @@ const Playlist = ({ playlist }) => {
   const color = getBGColor(playlist.id)
 
   return (
-    <GradientLayout>
+    <GradientLayout
       color={color}
       roundImage={false}
       title={playlist.name}

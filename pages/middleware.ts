@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server'
+// eslint-disable-next-line @next/next/no-server-import-in-page
+import { NextResponse, NextRequest } from 'next/server'
 
 const signedinPages = ['/', '/playlist', '/library']
 
-export default function middleware(req) {
+export default function middleware(req: NextRequest) {
   if (signedinPages.find((p) => p === req.nextUrl.pathname)) {
     const token = req.cookies.TRAX_ACCESS_TOKEN
 

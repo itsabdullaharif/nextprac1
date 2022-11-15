@@ -12,8 +12,4 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  // next.config.js
-  experimental: {
-    forceSwcTransforms: true,
-  },
 }

@@ -1,3 +1,4 @@
+
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import cookie from 'cookie'
@@ -5,10 +6,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../lib/prisma'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log('Hi there')
+
   const { email, password } = req.body
-  console.log('email', email)
-  console.log('password', password)
+
 
   const user = await prisma.user.findUnique({
     where: {
@@ -46,3 +46,22 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.json({ error: 'Email or Password is wrong' })
   }
 }
+
+// export function middleware() {
+
+//   // set a cookie
+//   response.cookies.set('vercel', 'fast')
+
+//   // set another cookie with options
+//   response.cookies.set('nextjs', 'awesome', { path: '/test' })
+
+//   // get all the details of a cookie
+//   const { value, ...options } = response.cookies.getWithOptions('vercel')
+//   console.log(value) // => 'fast'
+//   console.log(options) // => { name: 'vercel', Path: '/test' }
+
+//   // deleting a cookie will mark it as expired
+//   response.cookies.delete('vercel')
+
+//   return response
+// }
